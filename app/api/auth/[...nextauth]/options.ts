@@ -20,23 +20,18 @@ export const options: NextAuthOptions = {
         }
       },
       async authorize(credentials) {
-        // const user = {
-        //   id: "42",
-        //   email: "a@awews.com",
-        //   password: "password"
-        // }
         try {
           const foundUser = await User.findOne({
             email: credentials?.email
           })
           .exec();
-          console.log('foundUser :>> ', foundUser);
+          // console.log('foundUser :>> ', foundUser);
           if (foundUser) {
-            console.log('foundUser :>> ', foundUser);
+            // console.log('foundUser :>> ', foundUser);
             const match = await bcrypt.compare(credentials?.password, foundUser?.password);
 
             if (match) {
-              console.log('match :>> ', match);
+              // console.log('match :>> ', match);
               delete foundUser.password;
               return foundUser;
             }
@@ -62,8 +57,8 @@ export const options: NextAuthOptions = {
     // },
     async session({session, token}){
       if (session?.user) {
-        console.log('session :>> ', session);
-        console.log('token :>> ', token);
+        // console.log('session :>> ', session);
+        // console.log('token :>> ', token);
         session.user.role = token?.role;
       }
       return session;
