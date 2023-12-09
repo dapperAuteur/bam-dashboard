@@ -1,4 +1,3 @@
-import { Int32 } from "mongodb";
 import mongoose, { Schema } from "mongoose";
 
 mongoose.connect(process.env.DATABASE_URL);
