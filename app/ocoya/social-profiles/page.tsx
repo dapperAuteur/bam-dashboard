@@ -1,5 +1,6 @@
 "use client"
 
+import SocialProfile from '@/app/(components)/(ocoya)/SocialProfile';
 import { SocialProfileInterface } from '@/lib/types';
 import React, { useEffect, useState } from 'react';
 
@@ -14,7 +15,7 @@ const SocialProfiles: React.FC<SocialProfilesProps> = () => {
       const response = await fetch("/api/ocoya/social-profiles")
         .then(response => {
           if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.statusText}`)
+            throw new Error(`Network fetchSocialProfiles response was not ok: ${response.statusText}`)
           }
           return response.json();
         })
@@ -23,7 +24,7 @@ const SocialProfiles: React.FC<SocialProfilesProps> = () => {
           setSocialProfiles(data.socialProfiles);
         })
         .catch(error => {
-          console.log('error fetching data :>> ', error);
+          console.log('error fetchSocialProfiles data :>> ', error);
           return <div>No Social Profiles Yet</div>
         })
     }
@@ -33,7 +34,7 @@ const SocialProfiles: React.FC<SocialProfilesProps> = () => {
     // console.log('socialProfile :>> ', socialProfile);
     return (
       <div color='red' key={socialProfile?.id}>
-        <h2>{socialProfile?.provider} - <span>{socialProfile?.name}</span></h2>
+        <SocialProfile data={socialProfile}/>
       </div>
     )
   })

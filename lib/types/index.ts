@@ -77,3 +77,28 @@ export interface PersonInterface {
   tranx: TransactionInterface[];
   nickname: string[];
 }
+
+export interface SocialProfileInterface {
+  id: string;
+  provider: string;
+  subprovider: string;
+  name: string;
+  socialAccount: {
+    id: string;
+    name: string;
+    image: string;
+  },
+  profileBoards: []
+}
+
+export interface WorkspaceInterface {
+  id?: string;
+  name: string;
+  image: string;
+  owner: {
+    email: string;
+  }
+  plan: {
+    name: string;
+  }
+}

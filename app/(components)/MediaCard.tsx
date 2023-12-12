@@ -30,4 +30,4 @@ const MediaCard: React.FC<VideoListProps> = ({data}) => {
   )
 }
 
-export default MediaCard
+export default MediaCard;

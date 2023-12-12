@@ -12,7 +12,7 @@ export async function GET() {
     redirect: 'follow'
   });
   if (!res.ok) {
-    return new NextResponse("Error while fetching data", { status: res.status });
+    return new NextResponse("Error while fetching socialProfiles data", { status: res.status });
   }
   const json = await res.json();
   // console.log('json :>> ', json[0]);
@@ -22,6 +22,6 @@ export async function GET() {
   }));
   } catch (err) {
     console.log('err fetching data :>> ', err);
-    return new NextResponse("Error while fetching data", { status: 500 })
+    return new NextResponse("Error while fetching socialProfiles data", { status: 500 })
   }
 }
