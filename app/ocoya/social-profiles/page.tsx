@@ -1,32 +1,47 @@
 "use client"
 
+import { SocialProfileInterface } from '@/lib/types';
 import React, { useEffect, useState } from 'react';
-// import useSWR from 'swr';
-// import { fetcher } from '@/lib/ocoyaCall';
 
+interface SocialProfilesProps {
+  socialProfiles: SocialProfileInterface;
+}
 
-
-const SocialProfiles = () => {
+const SocialProfiles: React.FC<SocialProfilesProps> = () => {
   const [socialProfiles, setSocialProfiles] = useState([])
   useEffect(() => {
-    const fetchSocialProfiles =async () => {
-      const response = await fetch("/api/ocoya/social-profiles");
-      const socialProfiles = await response.json();
-      console.log('socialProfiles :>> ', socialProfiles);
-      setSocialProfiles(socialProfiles);
+    const fetchSocialProfiles = async () => {
+      const response = await fetch("/api/ocoya/social-profiles")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.statusText}`)
+          }
+          return response.json();
+        })
+        .then(data => {
+          // console.log('data from server :>> ', data);
+          setSocialProfiles(data.socialProfiles);
+        })
+        .catch(error => {
+          console.log('error fetching data :>> ', error);
+          return <div>No Social Profiles Yet</div>
+        })
     }
-  
-    // return () => {
-    //   second
-    // }
     fetchSocialProfiles();
   }, []);
-  
+  let socProf = socialProfiles.map((socialProfile: any) => {
+    // console.log('socialProfile :>> ', socialProfile);
+    return (
+      <div color='red' key={socialProfile?.id}>
+        <h2>{socialProfile?.provider} - <span>{socialProfile?.name}</span></h2>
+      </div>
+    )
+  })
 
   return (
     <div>
       <h1>SocialProfiles</h1>
-      
+      {socProf}
     </div>
   )
 }
