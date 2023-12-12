@@ -41,7 +41,7 @@ export default function Videos(){
   }
 
   if (!data) {
-    console.log('data :>> ', data);
+    console.log('No data :>> ', data);
     return null
   }
 
