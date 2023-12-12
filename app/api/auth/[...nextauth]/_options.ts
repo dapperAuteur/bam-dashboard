@@ -28,7 +28,7 @@ export const options: NextAuthOptions = {
           // console.log('foundUser :>> ', foundUser);
           if (foundUser) {
             // console.log('foundUser :>> ', foundUser);
-            const match = await bcrypt.compare(credentials?.password, foundUser?.password);
+            const match = await bcrypt.compare(credentials?.password || "", foundUser?.password);
 
             if (match) {
               // console.log('match :>> ', match);
@@ -59,7 +59,10 @@ export const options: NextAuthOptions = {
       if (session?.user) {
         // console.log('session :>> ', session);
         // console.log('token :>> ', token);
-        session.user.role = token?.role;
+        // if (session.user?.role) {
+        //   session.user.role = token?.role;
+        // }
+        
       }
       return session;
     }
