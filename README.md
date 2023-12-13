@@ -1,3 +1,62 @@
+BAM Dashboard- npm package version
+
+Social Media Dashboard
+Becomes aware when new links are created on all my websites and tools
+- affiliate
+- - appsumo & tools
+- shopify products
+- dukaan products
+- media
+- - audio
+- - - use Adilo api
+- - video
+- - - use Adilo api
+- - images
+- - - switchboard.ai api https://developers.switchboard.ai/
+- - - use Cloudinary api
+- - podcasts
+- - - use RSS Feed
+- - blog posts
+- - - use RSS Feed
+- - #ReadWitUS
+- - - use * api
+- - deepword
+- - vidpopup
+- webhooks
+- db
+- api
+
+Shows a list of links that haven't been promoted on social media yet
+- Things That can be done with list of links
+- - create short link (describe)
+- - - use Switchy.io api
+- - see analytics for page
+- - - use Google Analytics api
+- - - use TruConversion Api
+- - edit page
+- - share page on social media (describe)
+- - - use Ocoya api
+- - schedule meetings
+- - - use Sessions api
+- - - use Consolto api
+- - - use Hey Edgar api
+- - - use HeartBeat api
+- - - use Acadle api
+- - - Use Pabbly webhooks
+- - - Use Stripe api
+- - - Use mobile-text-alerts
+- - - Use flotiq.com
+crowdparty
+ideta
+interacty
+snackeet
+story widget
+sturppy
+median
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
