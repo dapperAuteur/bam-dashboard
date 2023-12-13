@@ -6,7 +6,7 @@ interface SocialPostsProps {
 }
 
 const SocialPost: React.FC<SocialPostsProps> = ({data}) => {
-  console.log('data :>> ', data);
+  // console.log('data :>> ', data);
   return (
     <div>
       <span>SocialPost</span>

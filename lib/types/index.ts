@@ -102,3 +102,26 @@ export interface WorkspaceInterface {
     name: string;
   }
 }
+
+export interface ScheduledSocialPostInterface {
+  id: string;
+  scheduleAt: string;
+  postGroup: {
+    posts: SocialPostInterface[];
+  }
+  schedules: ScheduleInterface[];
+}
+
+export interface SocialPostInterface {
+  caption: string;
+  creatives: []
+}
+
+export interface ScheduleInterface {
+  error: string;
+  socialProfile: {
+    provider: string;
+    name: string;
+    socialId: string;
+  }
+}
