@@ -1,7 +1,49 @@
-BAM Dashboard- npm package version
+  BAM Dashboard- npm package version
 
 Social Media Dashboard
 Becomes aware when new links are created on all my websites and tools
+- psuedo-code
+```
+route(`/something-changed/${type}/`, {
+  method: 'Post',
+  Content-type: 'application/json',
+  Auth: process.env.PRIVATE_KEY
+},
+  body: JSON.stringify({
+			type: 'new-image',
+			location: cloudinary,
+			new-thing: {
+    id: new-thing.id,
+			media_url: '...new-image.png',
+    ...new-thing}
+})
+)
+return new NextResponse(success)
+...
+```
+-blog posts
+- web pages
+-- aryel.io
+-- etc
+- media
+-- video
+-- audio
+-- images
+
+Shows a list of links that haven't been promoted on social media yet
+- Things That can be done with list of links
+- - edit
+- - create new
+- - - add media to adilo
+- - - add media to cloudinary
+- - - add media to blog post
+- - make live
+- - create short link (describe)
+- - - use Switchy.io api
+
+Social Media Dashboard
+Becomes aware when new links are created on all my websites and tools
+
 - affiliate
 - - appsumo & tools
 - shopify products
