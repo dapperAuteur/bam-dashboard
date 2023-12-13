@@ -21,7 +21,7 @@ export async function GET() {
     status: 200,
   }));
   } catch (err) {
-    console.log('err fetching data :>> ', err);
+    console.log('err fetching socialProfiles data :>> ', err);
     return new NextResponse("Error while fetching socialProfiles data", { status: 500 })
   }
 }
