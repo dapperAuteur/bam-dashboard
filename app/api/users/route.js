@@ -6,6 +6,8 @@ export async function POST(req) {
   try {
     const body = await req.json();
     const userData = body.formData;
+    console.log('body :>> ', body);
+    console.log('userData :>> ', userData);
 
     // Confirm data exists
     if (!userData?.email || !userData?.password) {

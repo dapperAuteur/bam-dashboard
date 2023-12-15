@@ -34,7 +34,7 @@ const CreatePostForm = () => {
     const res = await fetch("/api/ocoya/create-post", {
       method: 'POST',
       body: JSON.stringify({formData}),
-      "Content-type": "application/json"
+      'Content-Type': 'application/json'
     });
     if (!res.ok) {
       const response = await res.json();
@@ -48,6 +48,7 @@ const CreatePostForm = () => {
 
   return (
     <>
+      <p className="text-red-500">{errorMessage}</p>
       <form
         onSubmit={handleSubmit}
         method="post"
@@ -94,7 +95,6 @@ const CreatePostForm = () => {
                   value="Create Post"
                   className="bg-blue-300 hover:bg-blue-100"/>
       </form>
-      <p className="text-red-500">{errorMessage}</p>
     </>
   )
 }

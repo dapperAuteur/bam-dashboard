@@ -9,29 +9,25 @@ export async function POST(req) {
         { status: 400 }
       )
     }
-    // console.log('body :>> ', body);
-    // const bodyStringify = JSON.stringify(body)
-    // console.log('bodyStringify :>> ', bodyStringify);
     const res = await fetch('https://app.ocoya.com/api/_public/v1/schedules', {
       headers: {
-        'content-type': 'application/json',
-        'X-API-Key': process.env.OCOYA_X_API_Key,
+        'Content-Type': 'application/json',
+        'X-API-Key': process.env.OCOYA_X_API_Key_LOCAL,
         },
       method: 'POST',
       body: JSON.stringify(body)
     })
+    console.log('res :>> ', res);
     if (!res.ok) {
-      return new NextResponse("Failed to create post", { status: res.status});
+      console.log('res :>> ', res);
+      throw new Error(`HTTP error! Status: ${res.status}`);
     }
-    const json = await res.json();
-    console.log('newOcoyaPost json :>> ', json);
-    return new NextResponse(JSON.stringify({
-      newOcoyaPost: json,
-      status: 200
-    }));
-
+    return NextResponse.json(
+      { message: "Hello World." },
+      { status: 201 });
   } catch (err) {
-    console.log('newOcoyaPost POST err :>> ', err);
-    return new NextResponse({message: `Error while creating newOcoyaPost ${err}`}, { status: 500 })
+    return NextResponse.json({
+      message: `It's Not Working as expected. Err: >> ${err.message}`
+    }, {status: 500}) 
   }
 }
