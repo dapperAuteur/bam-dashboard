@@ -73,7 +73,7 @@ const UserForm = () => {
             required={false}
             value={formData.password}
             className="m-2 bg-slate-400 rounded"/>
-            <label>Password</label>
+            <label>Confirm Password</label>
             <input
               id="confirmPassword"
               name="confirmPassword"
