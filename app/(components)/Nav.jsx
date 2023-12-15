@@ -16,6 +16,9 @@ const Nav = async () => {
           <Link href="/member">Member</Link>
           <Link href="/public">Public</Link>
           <Link href="/videos">Videos</Link>
+          <Link href="/ocoya/create-ocoya-post">Create Post</Link>
+          <Link href="/ocoya/social-profiles">Social Profiles</Link>
+          <Link href="/ocoya/scheduled-posts">Scheduled Posts</Link>
           {
             session ? (
               <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
