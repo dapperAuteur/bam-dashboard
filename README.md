@@ -36,6 +36,24 @@ Shows a list of links that haven't been promoted on social media yet
 - - create new
 - - - add media to adilo
 - - - add media to cloudinary
+``` create folder, then upload media, then get media by id
+cloudinary.v2.api
+  .create_folder('iwritecode')
+  .then(console.log);
+cloudinary.v2.uploader
+  .upload('iWriteCode.png', {
+    folder: 'iwritecode',
+    resource_type: 'image'})
+  .then(console.log);
+cloudinary.v2.api
+  .resource_by_asset_id('4a7bfc82263e4568d1b4088584ec2183')
+  .then(console.log)
+cloudinary.v2.uploader
+.rename('iwritecode/gbig9rravnf4lb6cakfq', 'iwritecode/iwritecode-logo-twice-gbig9rravnf4lb6cakfq', {
+  type: 'upload',
+  resource_type: 'image'})
+.then(console.log);
+```
 - - - add media to blog post
 - - make live
 - - create short link (describe)
