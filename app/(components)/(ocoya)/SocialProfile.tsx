@@ -9,8 +9,8 @@ const SocialProfile: React.FC<SocialProfilesProps> = ({data}) => {
   // console.log('data :>> ', data);
   return (
     <div>
-      <span>SocialProfile</span>
-      <h2>{data?.provider} - <span>{data?.name}</span></h2>
+      <h2>{data?.provider} Profile</h2>
+      <h2>- <span>{data?.name}</span></h2>
     </div>
   )
 }
