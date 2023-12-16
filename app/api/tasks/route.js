@@ -29,8 +29,11 @@ export async function POST(req) {
       })
     }
 
-    await Task.create(taskData);
+    const newTask = await Task.create(taskData);
+    console.log('newTask :>> ', newTask);
     return NextResponse.json({
+      data: newTask,
+    },{
       message: "Task created."
     },{
       status: 201
